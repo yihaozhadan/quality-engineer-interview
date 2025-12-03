@@ -1,0 +1,25 @@
+{
+  "name": "quality-engineer-interview",
+  "version": "1.0.0",
+  "description": "This branch has a bunch of [Playwright](https://playwright.dev/) examples for quality engineer interview.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yihaozhadan/quality-engineer-interview.git"
+  },
+  "keywords": ["playwright", "quality-engineer-interview", "testing", "automation", "frontend"],
+  "author": "Hui Zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yihaozhadan/quality-engineer-interview/issues"
+  },
+  "homepage": "https://github.com/yihaozhadan/quality-engineer-interview#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}
