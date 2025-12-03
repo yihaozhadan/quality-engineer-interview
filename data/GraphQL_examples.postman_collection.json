@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "a58242c7-0bbc-4586-b60d-fd0e9d8be1f5",
+		"name": "GraphQL examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Apollo Country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Query {\n  country(code: \"BR\") {\n    name\n    native\n    capital\n    emoji\n    currency\n    languages {\n      code\n      name\n    }\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://countries.trevorblades.com/graphql",
+					"protocol": "https",
+					"host": [
+						"countries",
+						"trevorblades",
+						"com"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Basic",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Query {\n  country(code: \"BR\") {\n    name\n    native\n    capital\n    emoji\n    currency\n    languages {\n      code\n      name\n    }\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "https://countries.trevorblades.com/graphql",
+							"protocol": "https",
+							"host": [
+								"countries",
+								"trevorblades",
+								"com"
+							],
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "x-served-by",
+							"value": "cache-iah17272-IAH"
+						},
+						{
+							"key": "accept-ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 03 Dec 2025 17:39:29 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "access-control-max-age",
+							"value": "600"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "POST, GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Stellate"
+						},
+						{
+							"key": "age",
+							"value": "1"
+						},
+						{
+							"key": "cache-control",
+							"value": "public, s-maxage=2628000, stale-while-revalidate=2628000"
+						},
+						{
+							"key": "x-cache",
+							"value": "MISS"
+						},
+						{
+							"key": "x-cache-hits",
+							"value": "0"
+						},
+						{
+							"key": "gcdn-cache",
+							"value": "MISS"
+						},
+						{
+							"key": "stellate-rate-limit-budget-remaining",
+							"value": "49"
+						},
+						{
+							"key": "stellate-rate-limit-rules",
+							"value": "\"IP limit\";type=\"RequestCount\";budget=50;limited=?0;remaining=49;refill=60"
+						},
+						{
+							"key": "stellate-rate-limit-decision",
+							"value": "pass"
+						},
+						{
+							"key": "stellate-rate-limit-budget-required",
+							"value": "13"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"country\": {\n            \"native\": \"Brasil\",\n            \"capital\": \"Brasília\",\n            \"emoji\": \"🇧🇷\",\n            \"currency\": \"BRL\",\n            \"languages\": [\n                {\n                    \"code\": \"pt\",\n                    \"name\": \"Portuguese\"\n                }\n            ],\n            \"name\": \"Brazil\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GraphQL Variables",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Query($code: ID!) {\n  country(code: $code) {\n    name\n    native\n    capital\n    emoji\n    currency\n    languages {\n      code\n      name\n    }\n  }\n}",
+						"variables": "{\n    \"code\": \"US\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://countries.trevorblades.com/graphql",
+					"protocol": "https",
+					"host": [
+						"countries",
+						"trevorblades",
+						"com"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Variable",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Query($code: ID!) {\n  country(code: $code) {\n    name\n    native\n    capital\n    emoji\n    currency\n    languages {\n      code\n      name\n    }\n  }\n}",
+								"variables": "{\n    \"code\": \"US\"\n}"
+							}
+						},
+						"url": {
+							"raw": "https://countries.trevorblades.com/graphql",
+							"protocol": "https",
+							"host": [
+								"countries",
+								"trevorblades",
+								"com"
+							],
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "x-served-by",
+							"value": "cache-bur-kbur8200114-BUR"
+						},
+						{
+							"key": "accept-ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 03 Dec 2025 18:03:56 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "access-control-max-age",
+							"value": "600"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "POST, GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "*"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Stellate"
+						},
+						{
+							"key": "age",
+							"value": "1"
+						},
+						{
+							"key": "cache-control",
+							"value": "public, s-maxage=2628000, stale-while-revalidate=2628000"
+						},
+						{
+							"key": "x-cache",
+							"value": "MISS"
+						},
+						{
+							"key": "x-cache-hits",
+							"value": "0"
+						},
+						{
+							"key": "gcdn-cache",
+							"value": "MISS"
+						},
+						{
+							"key": "stellate-rate-limit-budget-remaining",
+							"value": "47"
+						},
+						{
+							"key": "stellate-rate-limit-rules",
+							"value": "\"IP limit\";type=\"RequestCount\";budget=50;limited=?0;remaining=47;refill=50"
+						},
+						{
+							"key": "stellate-rate-limit-decision",
+							"value": "pass"
+						},
+						{
+							"key": "stellate-rate-limit-budget-required",
+							"value": "13"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"country\": {\n            \"native\": \"United States\",\n            \"capital\": \"Washington D.C.\",\n            \"emoji\": \"🇺🇸\",\n            \"currency\": \"USD,USN,USS\",\n            \"languages\": [\n                {\n                    \"code\": \"en\",\n                    \"name\": \"English\"\n                }\n            ],\n            \"name\": \"United States\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Passed Variables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Query($code: ID!) {\n  country(code: $code) {\n    name\n    native\n    capital\n    emoji\n    currency\n    languages {\n      code\n      name\n    }\n  }\n}",
+						"variables": "{\n    \"code\": \"{{code}}\"\n}"
+					}
+				},
+				"url": {
+					"raw": "https://countries.trevorblades.com/graphql",
+					"protocol": "https",
+					"host": [
+						"countries",
+						"trevorblades",
+						"com"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

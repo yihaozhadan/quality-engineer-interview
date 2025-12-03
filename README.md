@@ -1,25 +1,14 @@
-# Quality Engineer Interview
+# Postman Interview
 
-This document outlines the process of quality engineer interview. It is a collection of interview questions without answers. It is provides the flexibility to the interviewer to adjust the difficulty level of the questions based on the candidate's experience and knowledge.
+This branch has a bunch of [Postman](https://www.postman.com/) collections and environments for quality engineer interview.
 
 ## Problem Statement
 
-As a quality engineer interviewer, I need to implement the coding practices for quality engineer interview. The coding practice should cover most of the common coding practices in quality engineering and different difficulty level. The coding practice should be easy to understand and implement.
-
-## Approach
-
-This project only provides the coding practices for quality engineer interview. It does not provide the testing practices or specific test cases. It only provides initial code for the candidate to implement the coding practices. The specific questions or test cases are left to the interviewer to define.
+As a quality engineer interviewer, I want to implement the Postman tool practices for quality engineer interview. So that I can evaluate the candidate's Postman skills.
 
 ## Implementation
 
-The coding practices are classified by technic skill set. Each feature branch is a collection of individual specific techinical skill. It covers most of the common coding practices in quality engineer interview. This project covers the following coding practices:
-
-- Mocha
-- NodeJS
-- Playwright
-- Postman
-
-Please switch to the feature branch to see the specific coding practices.
+Postman is a feature-rich API development platform. This branch provides a set of basic Postman collections and environments based on the Postman features.
 
 ## Contribution
 
