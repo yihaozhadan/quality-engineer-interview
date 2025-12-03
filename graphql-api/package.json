@@ -1,0 +1,19 @@
+{
+  "name": "graphql-api-example",
+  "version": "1.0.0",
+  "description": "GraphQL API example",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^6.2.1",
+    "mocha": "latest"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "graphql": "^16.12.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "rest-api-example",
+  "version": "1.0.0",
+  "description": "Rest API example",
+  "scripts": {
+    "test": "mocha"
+  },
+  "directories": {
+    "test": "./test"
+  },
+  "devDependencies": {
+    "chai": "^6.2.1",
+    "mocha": "latest"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT"
+}
