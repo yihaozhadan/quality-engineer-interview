@@ -1,6 +1,6 @@
 # Quality Engineer Interview
 
-This document outlines the process of quality engineer interview. It is a collection of interview questions without answers. It is provides the flexibility to the interviewer to adjust the difficulty level of the questions based on the candidate's experience and knowledge.
+This document outlines the process of quality engineer interview. It is a collection of interview questions without answers. It provides the flexibility to the interviewer to adjust the difficulty level of the questions based on the candidate's experience and knowledge.
 
 ## Problem Statement
 
@@ -12,12 +12,13 @@ This project only provides the coding practices for quality engineer interview. 
 
 ## Implementation
 
-The coding practices are classified by technic skill set. Each feature branch is a collection of individual specific techinical skill. It covers most of the common coding practices in quality engineer interview. This project covers the following coding practices:
+The coding practices are classified by technic skill set. Each feature branch is a collection of individual specific technical skill. It covers most of the common coding practices in quality engineer interview. This project covers the following coding practices:
 
 - Mocha
 - NodeJS
 - Playwright
 - Postman
+- Java
 
 Please switch to the feature branch to see the specific coding practices.
 
