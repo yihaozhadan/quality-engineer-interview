@@ -1,0 +1,264 @@
+"""
+Sample GraphQL Schema for eCommerce API
+
+This schema demonstrates the GraphQL API used in the Quality Engineer Interview exercises.
+It provides an overview of the tested API to help interviewees understand:
+- Available queries and mutations
+- Input parameters and return types
+- Field structures for assertions
+
+Use this schema to build mock GraphQL requests and understand the API contract.
+"""
+
+# ============================================
+# Types
+# ============================================
+
+type Product {
+    id: ID!
+    name: String!
+    category: String!
+    price: Float!
+    stock: Int!
+    description: String
+}
+
+type CartItem {
+    productId: ID!
+    productName: String!
+    quantity: Int!
+    price: Float!
+    subtotal: Float!
+}
+
+type Cart {
+    id: ID!
+    userId: String!
+    items: [CartItem!]!
+    totalPrice: Float!
+}
+
+type OrderItem {
+    productId: ID!
+    productName: String!
+    quantity: Int!
+    price: Float!
+    subtotal: Float!
+}
+
+type Order {
+    id: ID!
+    userId: String!
+    orderDate: String!
+    status: OrderStatus!
+    items: [OrderItem!]!
+    totalPrice: Float!
+    shippingAddress: String!
+}
+
+enum OrderStatus {
+    PENDING
+    PROCESSING
+    SHIPPED
+    DELIVERED
+    CANCELLED
+}
+
+type Query {
+    """
+    Search products by category with optional price filters.
+    
+    Example:
+    {
+        products(category: "Electronics", minPrice: 100.00, maxPrice: 500.00) {
+            id
+            name
+            category
+            price
+            stock
+        }
+    }
+    """
+    products(
+        category: String!
+        minPrice: Float
+        maxPrice: Float
+    ): [Product!]!
+
+    """
+    Get a single product by ID.
+    Returns null if product not found (with error in errors array).
+    
+    Example:
+    {
+        product(id: "PROD-001") {
+            id
+            name
+            category
+            price
+            stock
+            description
+        }
+    }
+    """
+    product(id: ID!): Product
+
+    """
+    Get cart by user ID.
+    
+    Example:
+    {
+        cart(userId: "user_test") {
+            id
+            userId
+            items {
+                productId
+                productName
+                quantity
+                price
+                subtotal
+            }
+            totalPrice
+        }
+    }
+    """
+    cart(userId: String!): Cart
+
+    """
+    Get order by ID.
+    
+    Example:
+    {
+        order(id: "order_123") {
+            id
+            userId
+            orderDate
+            status
+            items {
+                productId
+                productName
+                quantity
+                price
+                subtotal
+            }
+            totalPrice
+            shippingAddress
+        }
+    }
+    """
+    order(id: ID!): Order
+}
+
+type Mutation {
+    """
+    Add a product to the user's cart.
+    Creates a new cart if one doesn't exist.
+    
+    Example:
+    mutation {
+        addToCart(userId: "user_test", productId: "PROD-001", quantity: 2) {
+            id
+            userId
+            items {
+                productId
+                productName
+                quantity
+                price
+                subtotal
+            }
+            totalPrice
+        }
+    }
+    """
+    addToCart(
+        userId: String!
+        productId: ID!
+        quantity: Int!
+    ): Cart
+
+    """
+    Update quantity of an item in the cart.
+    
+    Example:
+    mutation {
+        updateCartItem(userId: "user_test", productId: "PROD-001", quantity: 5) {
+            id
+            userId
+            items {
+                productId
+                productName
+                quantity
+                price
+                subtotal
+            }
+            totalPrice
+        }
+    }
+    """
+    updateCartItem(
+        userId: String!
+        productId: ID!
+        quantity: Int!
+    ): Cart
+
+    """
+    Remove an item from the cart.
+    
+    Example:
+    mutation {
+        removeFromCart(userId: "user_test", productId: "PROD-001") {
+            id
+            userId
+            items {
+                productId
+                productName
+                quantity
+                price
+                subtotal
+            }
+            totalPrice
+        }
+    }
+    """
+    removeFromCart(
+        userId: String!
+        productId: ID!
+    ): Cart
+
+    """
+    Create an order from the user's cart.
+    Order status will be PENDING for new orders.
+    
+    Example:
+    mutation {
+        createOrder(userId: "user_test", shippingAddress: "123 Main St, City, State 12345") {
+            id
+            userId
+            orderDate
+            status
+            items {
+                productId
+                productName
+                quantity
+                price
+                subtotal
+            }
+            totalPrice
+            shippingAddress
+        }
+    }
+    """
+    createOrder(
+        userId: String!
+        shippingAddress: String!
+    ): Order
+}
+
+# ============================================
+# Schema Definition
+# ============================================
+
+schema {
+    query: Query
+    mutation: Mutation
+}
