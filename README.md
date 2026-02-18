@@ -1,27 +1,47 @@
-# Quality Engineer Interview
+# eCommerce GraphQL API Testing - Interview Exercise
 
-This document outlines the process of quality engineer interview. It is a collection of interview questions without answers. It provides the flexibility to the interviewer to adjust the difficulty level of the questions based on the candidate's experience and knowledge.
+## Overview
+This exercise simulates testing a real eCommerce platform's GraphQL API. The candidate will work with existing test infrastructure and implement automated tests for various scenarios.
 
-## Problem Statement
+## Time Allocation (60 minutes)
+- **5 min**: Setup and environment familiarization
+- **40 min**: Coding exercises (2-3 problems)
+- **15 min**: Discussion and code review
 
-As a quality engineer interviewer, I need to implement the coding practices for quality engineer interview. The coding practice should cover most of the common coding practices in quality engineering and different difficulty level. The coding practice should be easy to understand and implement.
+## Technology Stack
+- Java 11+
+- JUnit 5
+- Rest Assured (with GraphQL support)
+- Maven
 
-## Approach
+## Setup Instructions
+1. Import the project into your IDE
+2. Run `mvn clean install` to download dependencies
+3. Review the existing `BaseGraphQLTest.java` for helper methods
+4. Mock API endpoint: `http://localhost:8080/graphql` (simulated)
 
-This project only provides the coding practices for quality engineer interview. It does not provide the testing practices or specific test cases. It only provides initial code for the candidate to implement the coding practices. The specific questions or test cases are left to the interviewer to define.
+## Project Structure
+```
+src/
+├── main/java/
+│   └── com/ecommerce/api/
+│       ├── models/          # API response models
+│       └── queries/         # GraphQL query templates
+└── test/java/
+    └── com/ecommerce/tests/
+        ├── BaseGraphQLTest.java    # Base test class with utilities
+        └── exercises/              # Your test implementations go here
+```
 
-## Implementation
+## Exercise Files
+- `Exercise1_ProductSearch.java` - Basic GraphQL query testing
+- `Exercise2_CartOperations.java` - Mutation testing with state management
+- `Exercise3_OrderWorkflow.java` - End-to-end workflow testing (Bonus)
 
-The coding practices are classified by technic skill set. Each feature branch is a collection of individual specific technical skill. It covers most of the common coding practices in quality engineer interview. This project covers the following coding practices:
-
-- Mocha
-- NodeJS
-- Playwright
-- Postman
-- Java
-
-Please switch to the feature branch to see the specific coding practices.
-
-## Contribution
-
-This is an open-source project. Any contribution is welcome. Please submit a pull request to the repository.
+## Evaluation Criteria
+- Code organization and readability
+- Proper use of assertions
+- Error handling
+- Test data management
+- Understanding of GraphQL concepts
+- API testing best practices
