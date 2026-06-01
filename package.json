@@ -1,0 +1,19 @@
+{
+  "name": "ecommerce-order-flow-interview",
+  "version": "1.0.0",
+  "description": "Mocha test interview - E-commerce order flow REST API testing",
+  "main": "server/index.js",
+  "scripts": {
+    "server": "node server/index.js",
+    "test": "mocha test/order.flow.test.js --timeout 10000",
+    "solution": "mocha test/solution/order.flow.solution.test.js --timeout 10000"
+  },
+  "keywords": ["mocha", "chai", "testing", "ecommerce", "interview"],
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.6",
+    "express": "^4.18.2"
+  }
+}
